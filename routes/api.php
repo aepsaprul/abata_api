@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MasterKaryawanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('nama', function () {
     return 'Namaku, Larashop API';
 });
+
+Route::get('karyawan', [MasterKaryawanController::class, 'index'])->name('karyawan');
 
