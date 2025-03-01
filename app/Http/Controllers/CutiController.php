@@ -9,15 +9,7 @@ class CutiController extends Controller
 {
   public function show($id)
   {
-    // $cuti = Cuti::find($id);
-
-    // return response()->json([
-    //   'message' => 'Success',
-    //   'cuti' => $cuti
-    // ], 200);
-
-    // Ambil data cuti berdasarkan ID dengan user yang sedang login
-    $cuti = Cuti::find($id);
+    $cuti = Cuti::with(['dataKaryawan', 'dataPengganti', 'dataTanggal', 'dataApprover'])->find($id);
 
     // Jika data tidak ditemukan, kembalikan response 404
     if (!$cuti) {
