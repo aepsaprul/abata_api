@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->group(function () {
   Route::get('/karyawan', [KaryawanController::class, 'index'])->name('karyawan');
   
   Route::get('/cuti/{id}/show', [CutiController::class, 'show'])->name('cuti.show');
+  Route::post('/cuti/store', [CutiController::class, 'store'])->name('cuti.store');
 });
